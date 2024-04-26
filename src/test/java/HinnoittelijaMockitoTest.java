@@ -16,6 +16,7 @@ public class HinnoittelijaMockitoTest {
         MockitoAnnotations.openMocks(this);
     }
 
+    // Testissä alle 100 hinta
     @Test
     public void testaaKasittelijaWithMockitoHinnoittelija() {
         // Arrange
@@ -38,6 +39,8 @@ public class HinnoittelijaMockitoTest {
         assertEquals(loppuSaldo, asiakas.getSaldo(), 0.001);
         verify(hinnoittelijaMock, times(2)).getAlennusProsentti(asiakas, tuote);
     }
+
+    // Testissä yli 100 hinta
     @Test
     public void testaaKasittelijaWithBigPrice() {
         // Arrange
